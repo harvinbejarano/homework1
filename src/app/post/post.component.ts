@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output
+  } from '@angular/core';
+import { CoreService } from '../core.service';
+import { Post } from './post.interface';
 
 @Component({
   selector: 'app-post',
@@ -6,10 +13,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-
-  constructor() { }
+  posts: Post[];
+  postUrl = 'https://jsonplaceholder.typicode.com/posts';
+  @Output() selectPost = new EventEmitter<Post>();
+  constructor(private coreService: CoreService) {
+  }
 
   ngOnInit() {
+    this.getAllPost();
+  }
+
+  getAllPost() {
+    this.coreService.getData<Post[]>(this.postUrl)
+      .subscribe((data: Post[]) => {
+        this.posts = data;
+      });
+  }
+
+  setSelectPost(post: Post) {
+    this.selectPost.emit(post);
   }
 
 }

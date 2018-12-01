@@ -1,3 +1,10 @@
-<p>
-  comment works!
-</p>
+<p><b>Post ({{selectedPost?.id}}) : {{selectedPost?.title}}</b> </p>
+<p><b>Comments:</b></p>
+<div *ngFor="let item of comments">
+  ⚫<span>
+    {{ item?.body}}s
+  </span>
+  <br>
+</div>
+<br>
+<button (click)="goBack()">Back to Posts</button>

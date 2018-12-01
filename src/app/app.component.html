@@ -2,27 +2,9 @@
 <br>
 <br>
 
-<div *ngIf="displayPost">
-  <div *ngFor="let item of posts">
-    🔵 <a href="#"
-       (click)="getPostComments(item)">{{item.title }}</a><br>
-    <span>
-      {{item.body}}
-    </span>
-    <hr>
-    <br>
-  </div>
-</div>
+<app-post *ngIf="displayPost"
+          (selectPost)="getSelectedPost($event)"></app-post>
 
-<div *ngIf="!displayPost">
-  <p><b>Post({{selectedPost?.id}}): {{selectedPost?.title}}</b> </p>
-  <p><b>Comments:</b></p>
-  <div *ngFor="let item of comments">
-    ⚫<span>
-      {{ item?.body}}s
-    </span>
-    <br>
-  </div>
-  <br>
-  <button (click)="goBack()">Back to Posts</button>
-</div>
+<app-comment *ngIf="!displayPost"
+             [selectedPost]="selectedPost"
+             (ActionGoBack)="goBack()"></app-comment>
