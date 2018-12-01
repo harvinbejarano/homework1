@@ -1,0 +1,14 @@
+{
+  // PRETTIER
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  // BEAUTIFY
+  "beautify.ignore": ["**/**.js", "**/**.ts", "**/_**.scss"],
+  "beautify.language": {
+    "css": ["css", "scss"]
+  },
+  // SORT TYPESCRIPT IMPORTS
+  "typescript.extension.sortImports.sortOnSave": true,
+  // GENERAL
+  "html.format.wrapLineLength": 0,
+}

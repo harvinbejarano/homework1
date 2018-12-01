@@ -1,9 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { PostComponent } from './post/post.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { CommentComponent } from './comment/comment.component';
+import { CoreService } from './core.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { PostComponent } from './post/post.component';
+
 
 @NgModule({
   declarations: [
@@ -12,9 +14,10 @@ import { CommentComponent } from './comment/comment.component';
     CommentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
