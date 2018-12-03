@@ -4,7 +4,6 @@
 
 <app-post *ngIf="displayPost"
           (selectPost)="getSelectedPost($event)"></app-post>
-
 <app-comment *ngIf="!displayPost"
              [selectedPost]="selectedPost"
              (ActionGoBack)="goBack()"></app-comment>
