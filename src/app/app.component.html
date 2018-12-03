@@ -1,9 +1,10 @@
-<b> Welcome to {{ title }}! </b>
+<b> {{ title }}! </b>
 <br>
 <br>
 
 <app-post *ngIf="displayPost"
           (selectPost)="getSelectedPost($event)"></app-post>
+
 <app-comment *ngIf="!displayPost"
              [selectedPost]="selectedPost"
              (ActionGoBack)="goBack()"></app-comment>

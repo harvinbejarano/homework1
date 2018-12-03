@@ -7,7 +7,7 @@ import { Post } from './post/post.interface';
 	styleUrls: [ './app.component.scss' ],
 })
 export class AppComponent {
-	title = 'Homework 1';
+	title = 'Homework 1 ';
 	selectedPost: Post;
 	displayPost = true;
 
