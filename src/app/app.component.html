@@ -1,7 +1,7 @@
-<b> {{ title }}! </b>
+<mat-toolbar>
+  <span>{{ title }}!</span>
+</mat-toolbar>
 <br>
-<br>
-
 <app-post *ngIf="displayPost"
           (selectPost)="getSelectedPost($event)"></app-post>
 
